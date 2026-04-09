@@ -1,5 +1,10 @@
 # Waveform-Gen-Basic
-  Waveform Generator Generate multiple waveform types and integrate them into a complete generator. Each student implements one waveform while coordinating output       selection and timing.
+Task:
+Waveform Generator Generate multiple waveform types and integrate them into a complete generator. Each student implements one waveform while coordinating output selection and timing.
+
+What we want to make:
+Basic generator of sine, square and triangle wave, that will send signal through mono audio output. It will show current state (frequency, selected wave...) on seven-segment. You will navigate through different settings by     pressing button.
+
 
 # TODO: 
   Klimt
@@ -18,6 +23,9 @@
 Blocks:
 
 - top.vhd --> main module that uses other modules and connects them together
+  Inputs:  * clock -                        Outputs:  * seg7 -
+           * btnu -                                   *
+           * switch -  
 - fsm_logic.vhd --> brain - switches modules after button press
 - counter_step.vhd --> counts the step (phase) for direct digital synthesis, we'll edit counter.vhd from lab4
 - debouncer.vhd --> safety module for button
