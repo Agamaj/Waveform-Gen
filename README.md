@@ -70,7 +70,8 @@ Blocks:
   
   Inputs:
   * clk - system clock
-  * waves - Current state (selected wave) from the FSM
+  * rst - reset signal to initialize the multiplexing counter
+  * waves - current state (selected wave) from the FSM
  
   Outputs:
   * seg7 - signals for individual segments (A-G)
