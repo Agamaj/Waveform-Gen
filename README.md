@@ -6,7 +6,7 @@ What we want to make:
 Basic generator of sine, square and triangle wave, that will send signal through mono audio output. It will show current state (frequency, selected wave...) on seven-segment. You will navigate through different settings by     pressing button.
 
 
-# TODO: 
+# TODO 1 week: 
   Klimt
   Give tasks to the others,
   Create modules for the block scheme and describes them,
@@ -117,3 +117,24 @@ Blocks:
 
   <img width="741" height="421" alt="projekt drawio" src="https://github.com/user-attachments/assets/934f5929-7e4b-41dc-a9ed-6645892027fc" />
 
+# TODO 2 week: 
+  Kovář
+  Create top-level block diagram
+  Define interconnection of all modules
+  Prepare top-level entity skeleton
+  Implement wave_square.vhd
+  Create tb_wave_square.vhd
+
+  Klimt
+  Implement fsm_logic.vhd
+  Define waveform selection logic
+  Define button-based navigation between settings
+  Implement wave_triangle.vhd
+  Create tb_wave_triangle.vhd
+
+  Krupenko
+  Manage GitHub repository structure
+  Update README
+  Implement wave_sine.vhd using LUT
+  Create tb_wave_sine.vhd
+  Collect simulation screenshots and Git updates
