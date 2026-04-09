@@ -51,6 +51,12 @@ Blocks:
   * waves - A 2-bit control signal ("00" = Sine, "01" = Sawtooth/Triangle, "10" = Square).
 
 - counter_step.vhd --> counts the step (phase) for direct digital synthesis, we'll edit counter.vhd from lab4
+  Inputs:
+  * clk - system clock
+  * en - enable signal (controlled by a switch; if '0', the counter stops)
+ 
+  Outputs:
+  * phase - current phase (an 8-bit value increasing from 0 to 255)
 
 - seg7.vhd --> seg 7 display controller
 - wave_sine --> generates sine signal
