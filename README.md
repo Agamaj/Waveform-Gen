@@ -27,18 +27,20 @@ Blocks:
   
   Inputs:
   * clk - 100 MHz system clock from the Nexys A7 board
-  * btn - Pushbutton for switching between waveforms             
-  * switch -
+  * btn - Pushbutton for switching between waveforms
+  * rst - Global reset button, usually a separate button on the board to initialize the system             
+  * switch - General enable switch (acts as the clock enable for the generator)
 
   Outputs:
   * pwm - PWM signal sent to the mono audio jack
   * seg7 - Display segments
-  * led - Display anodes (selects which digit is active)
+  * an - Display anodes (selects which digit is active)
     
 - debouncer.vhd --> safety module for button
 
   Inputs:
   * clk - 100 MHz system clock from the Nexys A7 board
+  * rst - Reset signal to clear internal shift registers/counters
   * btnu - Noisy signal from physical button
   
   Outputs:
@@ -48,6 +50,7 @@ Blocks:
   
   Inputs:
   * clk - system clock
+  * rst - Reset signal to return FSM to its default initial state
   * btnd - trigger coming from the debouncer
 
   Outputs:
@@ -57,7 +60,8 @@ Blocks:
   
   Inputs:
   * clk - system clock
-  * en - enable signal (controlled by a switch; if '0', the counter stops)
+  * rst - reset signal to clear the phase back to 0
+  * ce - clock enable signal (controlled by a switch; if '0', the counter stops)
  
   Outputs:
   * phase - current phase (an 8-bit value increasing from 0 to 255)
