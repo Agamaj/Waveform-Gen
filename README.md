@@ -75,7 +75,7 @@ Blocks:
  
   Outputs:
   * seg7 - signals for individual segments (A-G)
-  * led - signals to activate specific digits
+  * an - signals to activate specific digits
 
 - wave_sine --> generates sine signal
   
