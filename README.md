@@ -43,14 +43,16 @@ Blocks:
   * btnd - A clean, one-clock-cycle pulse indicating a valid press
   
 - fsm_logic.vhd --> brain - switches modules after button press
+  
   Inputs:
   * clk - system clock
   * btnd - trigger coming from the debouncer
 
   Outputs:
-  * waves - A 2-bit control signal ("00" = Sine, "01" = Sawtooth/Triangle, "10" = Square).
+  * waves - A 2-bit control signal ("00" = Sine, "01" = Sawtooth/Triangle, "10" = Square)
 
 - counter_step.vhd --> counts the step (phase) for direct digital synthesis, we'll edit counter.vhd from lab4
+  
   Inputs:
   * clk - system clock
   * en - enable signal (controlled by a switch; if '0', the counter stops)
@@ -59,6 +61,15 @@ Blocks:
   * phase - current phase (an 8-bit value increasing from 0 to 255)
 
 - seg7.vhd --> seg 7 display controller
+  
+  Inputs:
+  * clk - system clock
+  * waves - Current state (selected wave) from the FSM
+ 
+  Outputs:
+  * seg7 - signals for individual segments (A-G)
+  * led - signals to activate specific digits
+
 - wave_sine --> generates sine signal
 - wave_square --> generates square signal
 - wave_triangle --> generates triangle signal
