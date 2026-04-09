@@ -35,6 +35,12 @@ Blocks:
   * led - Display anodes (selects which digit is active)
   
 - fsm_logic.vhd --> brain - switches modules after button press
+  Inputs:
+  * clk - system clock
+  * btnd - trigger coming from the debouncer
+
+  Outputs:
+  * waves - A 2-bit control signal ("00" = Sine, "01" = Sawtooth/Triangle, "10" = Square).
 
 - counter_step.vhd --> counts the step (phase) for direct digital synthesis, we'll edit counter.vhd from lab4
 - debouncer.vhd --> safety module for button
