@@ -33,6 +33,7 @@ Blocks:
   * pwm - PWM signal sent to the mono audio jack
   * seg7 - Display segments
   * led - Display anodes (selects which digit is active)
+    
 - debouncer.vhd --> safety module for button
 
   Inputs:
@@ -71,6 +72,14 @@ Blocks:
   * led - signals to activate specific digits
 
 - wave_sine --> generates sine signal
+  
+  Inputs:
+  * clk - system clock
+  * phase - current phase (an 8-bit value increasing from 0 to 255)
+
+  Outputs:
+  * wave_sine - 
+  
 - wave_square --> generates square signal
 - wave_triangle --> generates triangle signal
 - pwm_out --> since nexys a7 board doesn't have d/ac converter, we'll use mono audio output and just send pwm signal through it
