@@ -26,13 +26,13 @@ Basic generator of sine, square and triangle wave, that will send signal through
   <img width="288" height="44" alt="image" src="https://github.com/user-attachments/assets/b5c56192-0150-4124-96ba-df5e8b74932f" />
 
 
-# TODO 2 week: 
+# TODO 1 week: 
   Klimt
   Give tasks to the others,
   Create .xdc file, (constrain)
 
   Kovář
-  Edit a block Scheme of Waveform Generator
+  Create a block Scheme of Waveform Generator
  
   Krupenko:
   Manage github project,
@@ -152,7 +152,7 @@ Blocks:
 
 # TODO 2 week: 
   Kovář
-  Create top-level block diagram
+  Edit top-level block diagram
   Define interconnection of all modules
   Prepare top-level entity skeleton
   Implement wave_square.vhd
