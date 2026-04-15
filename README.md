@@ -64,15 +64,15 @@ Blocks:
   * clk - 100 MHz system clock from the Nexys A7 board
   * rst - Reset signal to clear internal shift registers/counters
   * btn_u - Noisy signal from physical button
-  * btn_d -              --//--
-  * btn_l -              --//--
-  * btn_r -              --//--
+  * btn_d               --//--
+  * btn_l               --//--
+  * btn_r               --//--
   
   Outputs:
   * btnu - A clean, one-clock-cycle pulse indicating a valid press
-  * btnd -               --//--
-  * btnl -               --//--
-  * btnr -               --//--
+  * btnd                --//--
+  * btnl                --//--
+  * btnr                --//--
   
 - fsm_logic.vhd --> brain - switches modules after button press
   
@@ -80,9 +80,9 @@ Blocks:
   * clk - System clock
   * rst - Reset signal to return FSM to its default initial state
   * btnu - Trigger coming from the debouncer
-  * btnd -               --//--
-  * btnl -               --//--
-  * btnr -               --//--
+  * btnd                --//--
+  * btnl                --//--
+  * btnr                --//--
 
   Outputs:
   * waves - A 2-bit control signal ("00" = Sine, "01" = Sawtooth/Triangle, "10" = Square)
