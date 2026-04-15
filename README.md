@@ -3,8 +3,7 @@ Task:
 Waveform Generator Generate multiple waveform types and integrate them into a complete generator. Each student implements one waveform while coordinating output selection and timing.
 
 What we want to make:
-Basic generator of sine, square and triangle wave, that will send signal through mono audio output. It will show current state (frequency, selected wave...) on seven-segment. You will navigate through different settings by pressing different buttons.
-Frequency is only controlable by choosing from (1, 10, 100, 1000) displayed on 7-segments
+Basic generator of sine, square and triangle wave, that will send signal through mono audio output. It will show current state (frequency, selected wave) on 7-segments. You will navigate through different waveforms by pressing <> buttons. Frequency should be only choosable from (1, 10, 100, 1000) by pressing ^ button. Switch will be used for controlling output (on/off).
 
   # Detailed funcionality
   Buttons:
