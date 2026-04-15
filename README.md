@@ -15,16 +15,17 @@ Frequency is only controlable by choosing from (1, 10, 100, 1000) displayed on 7
   - LEFT -> changing waveform in the reverse direction
 
   Switch:
-  - SW0 for turning output ON/OFF
+  - SW0 -> for turning output ON/OFF
 
   LEDs:
-  - LED0 will light up when output is active
+  - LED0 -> will light up when output is active
 
   7segments:
-  - AN0-AN2 First 3 segments will be used for displaying which function is currently selected, such as (sin, tri, sqr) ![Uploading image.png…]()
-  - AN3 won't be used
-  - AN4-AN7 2nd half of the segments will be showing current frequency in one of states from: 0001 (1Hz), 0010 (10Hz), 0100 (100Hz), 1000 (1000Hz)
-  
+  - AN0-AN2 -> First 3 segments will be used for displaying which function is currently selected, such as (sin, tri, sqr) 
+  <img width="288" height="44" alt="image" src="https://github.com/user-attachments/assets/91ec836a-ffb0-4e2f-b800-eb3dec29b6ef" />
+  - AN3 -> won't be used
+  - AN4-AN7 -> 2nd half of the segments will be showing current frequency in one of states from: 0001 (1Hz), 0010 (10Hz), 0100 (100Hz), 1000 (1000Hz)
+
 
 # TODO 2 week: 
   Klimt
