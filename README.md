@@ -3,8 +3,29 @@ Task:
 Waveform Generator Generate multiple waveform types and integrate them into a complete generator. Each student implements one waveform while coordinating output selection and timing.
 
 What we want to make:
-Basic generator of sine, square and triangle wave, that will send signal through mono audio output. It will show current state (frequency, selected wave...) on seven-segment. You will navigate through different settings by     pressing button.
+Basic generator of sine, square and triangle wave, that will send signal through mono audio output. It will show current state (frequency, selected wave...) on seven-segment. You will navigate through different settings by pressing different buttons.
+Frequency is only controlable by choosing from (1, 10, 100, 1000, 10k) displayed on 7-segments
 
+  # Detailed funcionality
+  Buttons:
+  - We'll be using 5 buttons, 4 in every direction and 1 in the center
+  - UP button will be
+  - DOWN
+  - LEFT
+  - RIGHT
+
+  Switch:
+  - SW0 for turning output ON/OFF
+
+  LEDs:
+  - LED0 will light up when output is active
+
+  7segments:
+  - First 3 segments will be used for displaying which function is currently selected, such as (sin, tri, sqr) ![Uploading image.png…]()
+  - 2nd half of the segments will be showing current frequency in one of states from: 0001 (1Hz), 0010 (10Hz), 0100 (100Hz), 1000 (1000Hz), 10k (10kHz)
+  - AN0-AN2 
+
+  
 
 # TODO 1 week: 
   Klimt
@@ -27,7 +48,7 @@ Blocks:
   
   Inputs:
   * clk - 100 MHz system clock from the Nexys A7 board
-  * btn - Pushbutton for switching between waveforms
+  * btnu - Pushbutton for switching between waveforms
   * rst - Global reset button, usually a separate button on the board to initialize the system             
   * switch - General enable switch (acts as the clock enable for the generator)
 
