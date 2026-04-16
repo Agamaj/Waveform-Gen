@@ -27,11 +27,11 @@ Basic generator of sine, square and triangle wave, that will send signal through
 
 
 # TODO 1 week: 
-  Klimt
+  Klimt:
   Give tasks to the others,
   Create .xdc file, (constrain)
 
-  Kovář
+  Kovář:
   Create a block Scheme of Waveform Generator
  
   Krupenko:
@@ -147,21 +147,21 @@ Blocks:
 
 
 # TODO 2 week: 
-  Kovář
+  Kovář:
   Edit top-level block diagram
   Define interconnection of all modules
   Prepare top-level entity skeleton
   Implement wave_square.vhd
   Create tb_wave_square.vhd
 
-  Klimt
+  Klimt:
   Implement fsm_logic.vhd
   Define waveform selection logic
   Define button-based navigation between settings
   Implement wave_triangle.vhd
   Create tb_wave_triangle.vhd
 
-  Krupenko
+  Krupenko:
   Manage GitHub repository structure
   Update README
   Implement wave_sine.vhd using LUT
