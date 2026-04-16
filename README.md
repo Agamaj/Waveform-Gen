@@ -184,7 +184,7 @@ See waveform screenshot below.
 ## TODO – Week 3 (Integration)
 
 ### Kovář
-- Implement `top.vhd`
+- Help implement `waveform_mux`
 - Connect all modules
 - Ensure compatibility with `.xdc`
 - Run synthesis
@@ -200,7 +200,7 @@ See waveform screenshot below.
 
 ### Krupenko
 - Integrate `wave_sine`
-- Help implement `waveform_mux`
+- Implement `top.vhd`
 - Update README
 - Verify simulation
 - Manage Git
