@@ -1,0 +1,126 @@
+library IEEE;
+use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity seg7 is
+    Port ( clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           waves : in STD_LOGIC_VECTOR (1 to 0);
+           freq_step : in STD_LOGIC_VECTOR (11 to 0);
+           seg : out STD_LOGIC_VECTOR (6 to 0);
+           an : out STD_LOGIC_VECTOR (7 to 0));
+end seg7;
+
+architecture Behavioral of seg7 is
+
+-- Refresh counter for multiplexing (approx. 1ms per digit)
+    -- 100MHz / 2^17 results in approx 760Hz refresh rate
+    signal ref_cnt : unsigned(16 downto 0) := (others => '0');
+    signal digit_sel : std_logic_vector(2 downto 0); -- selects one of 8 digits
+    
+    signal current_data : std_logic_vector(6 downto 0);
+
+begin
+
+    -- 1. Refresh Counter for Multiplexing
+    p_refresh : process(clk)
+    begin
+        if rising_edge(clk) then
+            if rst = '1' then
+                ref_cnt <= (others => '0');
+            else
+                ref_cnt <= ref_cnt + 1;
+            end if;
+        end if;
+    end process;
+
+    -- Use the 3 most significant bits to switch between 8 anodes
+    digit_sel <= std_logic_vector(ref_cnt(16 downto 14));
+
+    -- 2. Multiplexing Logic (Anodes and Data)
+    p_mux : process(digit_sel, waves, freq_step)
+    begin
+    
+        an <= (others => '1');
+        current_data <= "1111111";
+
+        case digit_sel is
+            --------------------------------------------------------
+            -- Waveform Display (AN0, AN1, AN2)
+            --------------------------------------------------------
+            when "000" => -- AN0 (Rightmost of the first group)
+                an(0) <= '0';
+                case waves is
+                    when "00"   => current_data <= "1101010"; -- 'n'
+                    when "01"   => current_data <= "1111001"; -- 'I'
+                    when "10"   => current_data <= "0101111"; -- 'r'
+                    when others => current_data <= "1111111";
+                end case;
+
+            when "001" => -- AN1
+                an(1) <= '0';
+                case waves is
+                    when "00"   => current_data <= "1111001"; -- 'I'
+                    when "01"   => current_data <= "0101111"; -- 'r'
+                    when "10"   => current_data <= "0011001"; -- 'q'
+                    when others => current_data <= "1111111";
+                end case;
+
+            when "010" => -- AN2
+                an(2) <= '0';
+                case waves is
+                    when "00"   => current_data <= "0100100"; -- 'S'
+                    when "01"   => current_data <= "0000111"; -- 't'
+                    when "10"   => current_data <= "0100100"; -- 'S'
+                    when others => current_data <= "1111111";
+                end case;
+
+            --------------------------------------------------------
+            -- AN3: Unused
+            --------------------------------------------------------
+            when "011" =>
+                an(3) <= '1'; -- Stay OFF
+
+            --------------------------------------------------------
+            -- Frequency Display (AN4 - AN7)
+            --------------------------------------------------------
+            when "100" => -- AN4 (ones)
+                an(4) <= '0';
+                current_data <= "1000000"; -- always '0'
+
+            when "101" => -- AN5 (tens)
+                an(5) <= '0';
+                if unsigned(freq_step) >= 10 then 
+                    current_data <= "1000000"; -- '0'
+                else 
+                    current_data <= "1111111"; -- OFF
+                end if;
+
+            when "110" => -- AN6 (hundreds)
+                an(6) <= '0';
+                if unsigned(freq_step) >= 100 then 
+                    current_data <= "1000000"; -- '0'
+                else 
+                    current_data <= "1111111"; -- OFF
+                end if;
+
+            when "111" => -- AN7 (thousands)
+                an(7) <= '0';
+                if unsigned(freq_step) >= 1000 then 
+                    current_data <= "1111001"; -- '1'
+                elsif unsigned(freq_step) >= 1 then
+                    current_data <= "1000000"; -- '0' if 1, 10 or 100Hz (leading zero)
+                else
+                    current_data <= "1111111";
+                end if;
+
+            when others =>
+                an <= (others => '1');
+        end case;
+    end process;
+
+    -- 3. Segment Mapping (Active Low for Nexys A7: '0' = light up)
+    -- Segments: abcdefg
+    seg <= current_data;
+
+end architecture Behavioral;
