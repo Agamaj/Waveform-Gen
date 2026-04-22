@@ -184,15 +184,16 @@ See waveform screenshot below.
 ## TODO – Week 3 (Integration)
 
 ### Kovář
-- Help implement `waveform_mux`
+- Help implement `top.vhd`
 - Connect all modules
 - Ensure compatibility with `.xdc`
-- Run synthesis
+- Update schematic
 
 ---
 
 ### Klimt
 - Integrate `fsm_logic`
+- Create `top.vhd`
 - Connect buttons and control signals
 - Implement waveform switching
 
