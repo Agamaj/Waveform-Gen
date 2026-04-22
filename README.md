@@ -171,6 +171,11 @@ Blocks:
 
 ## Simulation
 
+### fsm_logic
+- Shows reaction (outputs: waves, freq_step) on the current state set by buttons up, down, left, right (inputs: btnu, btnd, btnl, btnr)
+
+<img width="521" height="283" alt="fsm_logic_tb" src="https://github.com/user-attachments/assets/25e98a90-3656-4f8a-b596-61c411440cbb" />
+
 ### seg7
 
 <img width="521" height="283" alt="seg7_tb" src="https://github.com/user-attachments/assets/d1d30261-daee-4c52-99a3-774247b7fe3c" />
