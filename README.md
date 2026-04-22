@@ -171,6 +171,10 @@ Blocks:
 
 ## Simulation
 
+### seg7
+
+<img width="521" height="283" alt="seg7_tb" src="https://github.com/user-attachments/assets/d1d30261-daee-4c52-99a3-774247b7fe3c" />
+
 ### wave_sine
 
 <img width="521" height="283" alt="wave_sine_tb" src="https://github.com/user-attachments/assets/14bbdd64-7f5c-4e3c-ab0b-65df04ec5f2b" />
