@@ -79,7 +79,7 @@ Blocks:
   * btnr                --//--
 
   Outputs:
-  * waves - A 2-bit control signal ("00" = Sine, "01" = Sawtooth/Triangle, "10" = Square)
+  * waves - A 2-bit control signal ("00" = Sine, "01" = Triangle, "10" = Square)
   * freq_step - Phase increment value defining the output frequency
 
 - counter_step.vhd --> counts the step (phase) for direct digital synthesis, we'll edit counter.vhd from lab4
@@ -173,6 +173,7 @@ Blocks:
 
 ### fsm_logic
 - Shows reaction (outputs: waves, freq_step) on the current state set by buttons up, down, left, right (inputs: btnu, btnd, btnl, btnr)
+- The circle navigation logic should be seen from the picture (sin -> tri -> sqr -> sin...)
 
 <img width="521" height="283" alt="fsm_logic_tb" src="https://github.com/user-attachments/assets/25e98a90-3656-4f8a-b596-61c411440cbb" />
 
